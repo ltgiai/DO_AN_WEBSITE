@@ -32,18 +32,9 @@ header{
 }
 
 .logo img{
-    max-width: 150px;
-    height: 130px;
-    margin-left: 10px; 
-    margin-top: 10px;  
-}
-.logo span{
-    font-family: 'Elsie Swash Caps';
-    font-weight: bolder;
-    font-size: 45px;
-    color: gold;
-    position: relative;
-    bottom: 50px;
+    max-width: 170px;
+    height: auto;
+    margin-left: 10px;    
 }
 
 .nav-menu{
@@ -164,7 +155,10 @@ section{
     margin: 3px;
 }
 
-.active1 {
+
+
+
+.active-1 {
     background-color: #999;
 }
 /* end slider */
@@ -184,34 +178,18 @@ section{
     text-transform: uppercase;
     font-weight: 500;
 }
-
+.active-3,
 .nav-menu a:hover{
     color: rgb(203, 40, 40);
     cursor: pointer;
 }
 
-.slider .main-btn{
-    position: absolute;
-    bottom: 25px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    display: inline-block;
-    color: #fff; 
-    background-color: chocolate;
-    font-size: 16px;
-    font-weight: 500;
-    border-radius: 25px;
-    padding: 10px 25px;
-    text-transform: capitalize;
-    text-align: center;
+.hide{
+    display: none;
 }
+/* end header */
 
-.main-btn:hover{
-    color: black;
-}
 
-  /* end header */
 
 
   /* san pham */
@@ -240,21 +218,17 @@ section{
 .products{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 0));
-    gap: 2.5rem;
+    gap: 2rem;
     justify-content: center;
     align-items: center;
 }
 
 .row{
-    display: flex;
     position: relative;
     transform: all .0.40s;
     text-align: center;
     height: auto;
     border: 1px solid #eee6e6;
-    flex-direction: column;
-    justify-content: center; 
-    align-items: center;
     overflow: hidden;
     box-shadow: 0px 2px 1.5px 0px #ccc;
 }
@@ -269,7 +243,7 @@ section{
     position: relative;
 }
 
-.product-card-content {
+.row .product-card-content {
     background: white;
     width: 100%;
     transition: all 0.2s;
@@ -279,45 +253,14 @@ section{
 }
 
 .row:hover img{
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 .row:hover .product-card-content{
     top: 0;    
 }
 
-
-.price h4{
-    margin: 25px;
-    font-size: 16px;
-}
-
-.price p{
-    color: #ff8a6c;
-    font-size: auto;
-    font-weight: 400;
-    margin-bottom: 40px;
-}
-
-.row a{
-    position: relative;
-    
-    bottom: 20px;
-    margin-bottom: 10px;
-    color: #f5f5f5;
-    background-color: goldenrod;
-    padding: 7px 16px;
-    border-radius: 1px;
-    
-}
-
-.row a:hover{
-    color: goldenrod;
-    background-color: #fff;
-    border: 2px solid goldenrod;
-}
-
-.products-text h5{
+.products h5{
     position: absolute;
     left: 12px;
     top: 12px;
@@ -329,8 +272,57 @@ section{
     font-weight: 400;
 }
 
+.product-card-content{
+    background: #f5f5f5;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: 42px;
+}
 
-/* phân trang sản phảm */
+.row .name-product{
+    width: 100%;
+    font-family: Muli;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-transform: uppercase;
+    text-overflow: ellipsis;
+    padding: 0 8px;
+}
+
+.row .price{
+    font-family: Muli;
+    font-size: 18px;
+    font-weight: 700;
+    color: #8a733f;
+    text-align: center;
+    margin-top: 24px;
+}
+
+.row .buy-btn-container{
+    margin-top: 16px;
+    margin-bottom: 12px;
+    color: #fff;
+    border: 1px solid #d3b673;
+    background: #d3b673;
+    padding: 8px 16px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: Muli;
+}
+
+.row .buy-btn-container:hover{
+    background-color: #fff;
+    color: #8a733f;
+}
+
+/* --------phan trang san pham ---------*/
 .listPage{
     margin-top: 30px;
     text-align: center;
@@ -348,13 +340,13 @@ section{
     border: 1px solid #333 ;
     border-radius: 50%;
 }
+
 .listPage .active2{
     color: #ccc;
 }
 
 
 
-/* hết phân trang */
 
  /* update-info */
 .update-info{
@@ -396,13 +388,13 @@ section{
 
 
 
+/* -------footer------- */
 
-/* contact */
-
-.contact{
+.footer{
     background-color: beige;
     padding-top: 40px;
-
+   
+    align-items: center;
 }
 .contact-info{
     display: grid;
@@ -410,13 +402,14 @@ section{
     gap: 3rem;
     padding-bottom: 30px;
     border-bottom: 1.5px solid #1a1a1c;
-
+    align-items: center;
 
 }
-.first-info img{
-    width: 150px;
-    height: 150px;
 
+.first-info img{
+    width: 140px;
+    height: auto;
+    margin-bottom: 20px;
 }
 
 
@@ -534,137 +527,3 @@ section{
     margin: 15px 10px 0 0;
 }
 
-@media screen and (max-width: 1100px){
-.logo img{
-    max-width: 200px;
-}
-
-   .nav-menu ul{
-        display: flex;
-    
-        padding: 10px 0;
-        width: 100%;
-        justify-content: center;
-        text-align: center;
-    }
-    
-    .nav-menu ul li a{
-        display: flex;
-        font-size: 14px;
-        padding: 10px 15px;  
-        color: rgb(17, 17, 17);
-        text-transform: uppercase;
-        font-weight: 400;
-    }
-
-    .products{
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 0));
-        gap: 1.5rem;
-    }
-
-    .price h4{
-        margin: 10px;
-        font-size: 13px;
-    }
-    
-    .contact-info .h4{
-        margin-bottom: 0px;
-    }  
-}
-
-@media screen and (max-width: 920px) {
-    header .logo{
-    
-        display: inline-block;
-        margin: 0 auto;
-        position: absolute;
-        left: 50%;
-        webkit-transform: translateX(-50%);
-        text-align: center;
-    }
-
-    .logo img{
-        max-width: 170px;
-    }
-   .price h4{
-        margin: 10px;
-        font-size: 13px;
-    
-    }
-    
-    .nav-menu{
-        display: block
-    }
-
-    .nav-menu ul{
-        flex-direction: column;
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 50%;
-        height: 100vh;
-        background-color: #292929c7;
-        z-index: 999;
-        margin-top:100px ;
-        transition: left 0.5s;
-       
-    }
-    .nav-menu li{
-        display: block;
-        text-align: center;
-        justify-content: center;
-        margin: 20px 0;
-        line-height: 30px;
-        border: 1px 0 solid #ff8a6c;
-    }
-
-    .nav-menu a{
-        display: block;
-        text-transform: uppercase !important;
-        color: #fff !important;
-        font-size: 20px;
-    }
-
-    .nav-toggle {
-        display: block;
-        float: left;
-    }
-
-    .nav-icon i{
-        font-size: 18px;
-        padding: 10px 8px;
-    }
-
-    .products{
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(130px, auto));
-        gap: 1.5rem;
-    }
-
-    .products{
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(130px, auto));
-        gap: 1.5rem;
-    }
-
-    .contact-info .h4{
-        margin-bottom: 0px;
-    }
-    
-}
-
-@media screen and (max-width: 450px){
-    .nav-icon i{
-        font-size: 16px;
-        padding: 10px 5px;
-    }
-    .products{
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(130px, auto));
-        gap: 1.5rem;
-    }
-    
-}
-
-/* lưu ý khi reponsive thì bỏ cái top=50px ở phần .product-card-content */
