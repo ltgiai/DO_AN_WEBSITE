@@ -57,8 +57,6 @@ btnLeft.addEventListener('click', () => {
 
 
 
-
-
 // --------phân trang sản phẩm---------
 let thisPage = 1;
 let limitPage = 12;
@@ -114,7 +112,6 @@ function listPage(type) {
         document.querySelector('.listPage').classList.add('hide');
     }
 }
-
 function changePage(i,type) {
     thisPage = i;
     loadItem(type);
@@ -150,9 +147,7 @@ function changeActivePosition(activeItem) {
     }
     activeItem.classList.add('active-3');
 }
-
 for (let i = 0; i < categoryTitle.length; i++) {
     categoryTitle[i].addEventListener('click', filterPosts.bind(this, categoryTitle[i]));
 }
-
 loadItem();

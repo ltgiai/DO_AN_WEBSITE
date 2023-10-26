@@ -61,7 +61,7 @@ let products = [
     }, 
     {
         ID: 70,
-        img: '/imge/ts7.jpg',
+        img: '/imge/ts8.jpg',
         name: 'tra sua tran chau',
         type: 'kemsua',
         price: '35.000',
@@ -69,7 +69,7 @@ let products = [
     },
     {
         ID: 70,
-        img: '/imge/ts7.jpg',
+        img: '/imge/ts9.jpg',
         name: 'tra sua tran chau',
         type: 'kemsua',
         price: '35.000',
@@ -77,7 +77,7 @@ let products = [
     },
     {
         ID: 70,
-        img: '/imge/ts7.jpg',
+        img: '/imge/ts10.png',
         name: 'tra sua tran chau',
         type: 'kemsua',
         price: '35.000',
@@ -85,7 +85,7 @@ let products = [
     },
     {
         ID: 70,
-        img: '/imge/ts7.jpg',
+        img: '/imge/ts11.jpg',
         name: 'tra sua tran chau',
         type: 'kemsua',
         price: '35.000',
@@ -93,7 +93,7 @@ let products = [
     },
     {
         ID: 70,
-        img: '/imge/ts7.jpg',
+        img: '/imge/ts12.png',
         name: 'tra sua tran chau',
         type: 'kemsua',
         price: '35.000',
@@ -101,7 +101,7 @@ let products = [
     },
     {
         ID: 70,
-        img: '/imge/ts7.jpg',
+        img: '/imge/ts12.png',
         name: 'tra sua tran chau',
         type: 'kemsua',
         price: '35.000',
@@ -109,7 +109,7 @@ let products = [
     },
     {
         ID: 70,
-        img: '/imge/ts7.jpg',
+        img: '/imge/ts1.jpg',
         name: 'tra sua tran chau',
         type: 'kemsua',
         price: '35.000',
@@ -117,7 +117,7 @@ let products = [
     },
     {
         ID: 70,
-        img: '/imge/ts7.jpg',
+        img: '/imge/ts2.jpg',
         name: 'tra sua tran chau',
         type: 'kemsua',
         price: '35.000',
@@ -134,7 +134,7 @@ let listCarts = [];
 function addCart() {
     products.forEach((value, key) =>{
         let newDiv =document.createElement('div')
-        newDiv.classList.add("row", value.type);
+        newDiv.classList.add('row', 'all' , value.type);
         newDiv.innerHTML=`
         <img src="${value.img}" alt=" ">
             <div class="product-text">
@@ -152,7 +152,9 @@ addCart();
 
 
 
-// ------phân danh mục sản phẩm------
+
+
+
 
 
 

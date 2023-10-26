@@ -50,24 +50,32 @@ header{
     text-align: center;
 }
 
-.nav-menu ul li a{
+.contact,
+.nav-menu .btn-filter{
     display: flex;
     font-size: 16px;
-    padding: 10px 20px;  
-    color: rgb(17, 17, 17);
+    padding: 10px 20px; 
     text-transform: uppercase;
-    font-weight: 400;
+    font-weight: 500;
     position: relative;
     text-decoration: none;
 }
 
-.nav-menu a:hover{
+.active-3{
+    color: rgb(203, 40, 40);
+    cursor: pointer;
+    text-decoration: underline !important;
+    text-underline-offset: 5px;
+    text-decoration-thickness: 2px !important;
+}
+
+.nav-menu .btn-filter:hover,
+.nav-menu .contact:hover{
     color: rgb(203, 40, 40);
     cursor: pointer;
     text-decoration: underline;
     text-underline-offset: 5px;
     text-decoration-thickness: 2px;
-    
 }
 
 .nav-icon{
@@ -109,7 +117,7 @@ section{
 
 .list-imgs {
     display: flex;
-    transition: transform 1s;
+    transition: 1s;
 }
 
 .list-imgs img {
@@ -178,7 +186,7 @@ section{
     text-transform: uppercase;
     font-weight: 500;
 }
-.active-3,
+
 .nav-menu a:hover{
     color: rgb(203, 40, 40);
     cursor: pointer;
