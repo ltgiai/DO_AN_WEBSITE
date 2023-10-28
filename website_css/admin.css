@@ -1,0 +1,113 @@
+body{
+    margin: 0px;
+    background-color: whitesmoke;
+}
+
+#sidebar{
+    width: 250px;
+    height: 1000px;
+    float: left;
+    background-color: aqua;
+    position: fixed;
+}
+
+#page-form{
+    width: 800px;
+    height: auto;
+    position: relative;
+    left: 400px;
+    top: 30px;
+    background-color: white;
+    border-radius: 10px;
+    border: solid 2px gold;
+}
+
+#page-product{
+    width: 800px;
+    height: auto;
+    position: relative;
+    left: 400px;
+    top: 50px;
+    background-color: white;
+    border-radius: 10px;
+    border: solid 2px gold;
+    margin-bottom: 100px;
+}
+
+.sidebar-logo{
+    width: 250px;
+    height: 100px;
+    background-color: wheat;
+}
+
+.sidebar-logo img{
+    width: 80%;
+    height: 70%;
+    margin: 10px 20px;
+}
+
+.sidebar-title {
+    width: 250px;
+    height: 80px;
+    background-color: wheat;
+}
+
+.sidebar-title span{
+    padding: 20px;
+    font-size: 30px;
+    font-weight: bolder;
+    position: relative;
+    top: 20px;
+}
+
+.sidebar-menu{
+    width: 250px;
+    height: 1000px;
+    background-color: wheat;
+
+}
+
+.sidebar-menu__list a{
+    display: block;
+    margin-bottom: 10px;
+
+    padding: 10px 20px;
+    text-decoration: none;
+    color: black;
+    font-size: larger;
+    background-color: whitesmoke;
+}
+
+.page-form__title{
+    background-color: gold;
+    color: white;
+    font-size: 20px;
+    height: 30px;
+    text-align: center;
+    border-radius: 2px;
+}
+
+.page-product-title{
+    background-color: gold;
+    color: white;
+    font-size: 20px;
+    height: 30px;
+    text-align: center;
+    border-radius: 2px;    
+}
+
+.page-product__contain{
+    padding: 20px 30px;
+    background-color: aqua;
+}
+
+.product-detail{
+    background-color: white;
+    width: 100%;
+    height: auto;
+}
+
+.product-detail__table table{
+    background-color: blueviolet;
+}
+
