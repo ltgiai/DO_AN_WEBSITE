@@ -139,8 +139,10 @@ function filterPosts(item) {
           
         }
     }
+    //Nếu không có sẽ bị lặp lại trang sau
     type = document.querySelector('.nav-menu .btn-filter.active-3').attributes.type.value;
     attr = type ? type : "all";
+    //Đệ quy
     changePage(1, type)
 }
 

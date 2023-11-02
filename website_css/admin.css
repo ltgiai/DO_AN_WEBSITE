@@ -1,43 +1,43 @@
 body{
     margin: 0px;
-    background-color: whitesmoke;
+    background-image:
+        linear-gradient(to bottom right, beige, orange);
+    background-attachment: fixed;
 }
 
 #sidebar{
     width: 250px;
     height: 1000px;
     float: left;
-    background-color: aqua;
     position: fixed;
+    border-right: solid gold 2px;
 }
 
 #page-form{
-    width: 800px;
+    width: 900px;
     height: auto;
     position: relative;
-    left: 400px;
+    left: 350px;
     top: 30px;
     background-color: white;
-    border-radius: 10px;
-    border: solid 2px gold;
+    border: solid 2px whitesmoke;
 }
 
 #page-product{
-    width: 800px;
+    width: 900px;
     height: auto;
     position: relative;
-    left: 400px;
+    left: 350px;
     top: 50px;
     background-color: white;
-    border-radius: 10px;
-    border: solid 2px gold;
+    border: solid darkred;
     margin-bottom: 100px;
 }
 
 .sidebar-logo{
     width: 250px;
     height: 100px;
-    background-color: wheat;
+    background-color: lightgoldenrodyellow;
 }
 
 .sidebar-logo img{
@@ -49,65 +49,125 @@ body{
 .sidebar-title {
     width: 250px;
     height: 80px;
-    background-color: wheat;
+    background-color: lightgoldenrodyellow;
 }
 
 .sidebar-title span{
-    padding: 20px;
+    padding: 10px;
     font-size: 30px;
+    font-family: monospace;
     font-weight: bolder;
     position: relative;
-    top: 20px;
+    color: goldenrod;
+    top: 15px;
 }
 
 .sidebar-menu{
     width: 250px;
     height: 1000px;
-    background-color: wheat;
+    background-color:lightgoldenrodyellow;
 
 }
 
 .sidebar-menu__list a{
     display: block;
     margin-bottom: 10px;
-
-    padding: 10px 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 5px;
     text-decoration: none;
-    color: black;
+    text-align: center;
+    color: goldenrod;
+    width: auto;
     font-size: larger;
-    background-color: whitesmoke;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: white;
+    border: solid goldenrod 2px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.sidebar-menu__list a:hover{
+    color: white;
+    background-color: goldenrod;
 }
 
 .page-form__title{
-    background-color: gold;
-    color: white;
-    font-size: 20px;
+    background-color: white;
+    color: gold;
+    margin-top: 30px;
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
     height: 30px;
     text-align: center;
     border-radius: 2px;
+    padding: 5px;
 }
 
-.page-product-title{
-    background-color: gold;
-    color: white;
-    font-size: 20px;
+.container-input{
+    margin: 10px 30px;
+}
+
+input{
+    width: 300px;
+    height: 20px;
+    margin-bottom: 10px;
+}
+
+button{
+    width: 70px;
     height: 30px;
-    text-align: center;
-    border-radius: 2px;    
+    background-color: lightgoldenrodyellow;
+    border-color: gold;
+    color: darkred;
+    cursor: pointer;
+    font-weight: bold;
 }
 
-.page-product__contain{
-    padding: 20px 30px;
-    background-color: aqua;
+button:hover{
+    background-color: darkred;
+    border-color: whitesmoke;
+    color: white;
 }
 
-.product-detail{
+.table-btn{
+    display: flex;
+    padding: 10px;
+}
+
+.btn:first-child{
+    margin-right: 10px;
+}
+
+.database-heading{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     background-color: white;
-    width: 100%;
-    height: auto;
+    font-weight: bold;
+    gap: 1px;
 }
 
-.product-detail__table table{
-    background-color: blueviolet;
+.heading-name{
+    background-color: gold;
+    width: auto;
+    color: white;
+    text-align: center;
+    font-family: sans-serif;
+    padding: 10px;
 }
+
+.table-content{
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.table-content span{
+}
+
+.table-img img{
+    width: 130px;
+}
+
 
