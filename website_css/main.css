@@ -18,7 +18,7 @@ header{
     width: 100%;
     height: 100px;
     top: 0;
-    background-color:azure;
+    background-color:#c2f0f0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -36,7 +36,7 @@ header{
     height: auto;
     margin-left: 10px;    
 }
-
+/* ------thanh menu---- */
 .nav-menu{
     display: flex;
     justify-content: center;
@@ -59,10 +59,11 @@ header{
     font-weight: 500;
     position: relative;
     text-decoration: none;
+    color: #000008;
 }
 
 .active-3{
-    color: rgb(203, 40, 40);
+    color: rgb(203, 40, 40) !important;
     cursor: pointer;
     text-decoration: underline !important;
     text-underline-offset: 5px;
@@ -80,32 +81,103 @@ header{
 
 .nav-icon{
     display: flex ;
-    text-align: center;
+    /* text-align: center;
+    justify-content: center; */
     float: right;
 }
-
-.nav-icon i{
+.nav-icon .container i{
+    color: black;
+    font-size: 25px;
+    font-weight: 800;
+   
+}
+.nav-icon a i{
     color: black;
     font-size: 25px;
     font-weight: 800;
     right: 0;
+    position: relative;
     padding: 10px 15px;
 }
-
+.nav-icon a {
+    display: flex;
+    align-items: center;
+}
 .nav-icon i:hover{
     color: rgb(203, 40, 40);
     cursor: pointer;
 }
 
-section{
+/* tim kiem san pham */
+
+.container{
+    width: 60px;
     
+    height: 45px;
+    border-radius: 20px;
+    /* background: white; */
+    position: relative;
+    transition: 0.3s;
+    overflow: hidden;
+}
+.container .iconSearch{
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+}
+.container .search{
+    font-size: 21px;
+}
+
+.container.active-4{
+    width: 250px;
+}
+
+.container .iconSearch i{
+    padding: 20px;
+}
+
+.container .input{
+    position: relative;
+    color: white;
+    width: 160px;
+    height: 45px;
+    left: 60px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container .input input{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    font-size: 14px;
+    outline: none;
+}
+
+.container .input i{
+    position: absolute;
+    right: -25px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    font-size: 20px;
+    color: black;
+}
+/* ----het tim kiem sp----*/
+
+section{
     padding: 5% 10% 0 10%;
 }
 
 /* slider */
 .slider {
     position: relative;
-    margin-top: 80px;
+    margin-top: 100px;
     padding: 0;
     width: 100%;
     height: auto;
@@ -163,9 +235,6 @@ section{
     margin: 3px;
 }
 
-
-
-
 .active-1 {
     background-color: #999;
 }
@@ -174,33 +243,13 @@ section{
 
 
 
-.nav-menu ul{
-    display: flex;
-    padding: 10px 0;
-}
-
-.nav-menu ul li a{
-    font-size: 16px;
-    padding: 10px 30px;  
-    color: rgb(17, 17, 17);
-    text-transform: uppercase;
-    font-weight: 500;
-}
-
-.nav-menu a:hover{
-    color: rgb(203, 40, 40);
-    cursor: pointer;
-}
-
-.hide{
-    display: none;
-}
-/* end header */
-
-
-
 
   /* san pham */
+.product .filters{
+    display: flex;
+    float: right;
+}
+
 
 .center-text-share{
     display:block;
@@ -221,7 +270,6 @@ section{
     align-items: center;
     margin-bottom: 75px;
 }
-
 
 .products{
     display: grid;
@@ -330,6 +378,9 @@ section{
     color: #8a733f;
 }
 
+/* ---thong bao khi khong co san pham------ */
+
+
 /* --------phan trang san pham ---------*/
 .listPage{
     margin-top: 30px;
@@ -352,8 +403,9 @@ section{
 .listPage .active2{
     color: #ccc;
 }
-
-
+.hide{
+    display: none;
+}
 
 
  /* update-info */
@@ -398,12 +450,13 @@ section{
 
 /* -------footer------- */
 
-.footer{
+#footer{
     background-color: beige;
     padding-top: 40px;
-   
+    position: relative;
     align-items: center;
 }
+
 .contact-info{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, auto));
@@ -419,7 +472,6 @@ section{
     height: auto;
     margin-bottom: 20px;
 }
-
 
 .contact-info h4{
     color: rgb(11, 11, 11);
@@ -530,7 +582,7 @@ section{
     cursor: pointer;
     color: #ff8a6c !important;
     font-size: 24px;
-    color: black;
+    color: rgb(0, 0, 0);
     padding: 0;
     margin: 15px 10px 0 0;
 }
