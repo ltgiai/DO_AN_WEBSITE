@@ -67,30 +67,68 @@
         </div>
     </section>
     
-    <section id="product">
+    <section >
         <div class=" center-text"> <h2 class="center-text-share">SẢN PHẨM NỔI BẬT</h2></div>
         <div class="icon-bottom-title"><img src="/imge/line.webp" alt=""></div>
-        <!-- <div class="filters" style="width: 100px; height:50px; background-color: #c2f0f0; ">lọc sản phẩm</div> -->
+            <div class="openFilter">
+                <button id="filterButton"><i class="fa-solid fa-sliders" style="margin-right: 5px;"></i>Lọc theo sản phẩm</button>
+            </div>
 
+            <div class="filter" style="margin: 20px 5%; height: 130px; background-color: rgb(255, 255, 255);">
+                <form id="filterForm">
+                    <div id="filterContainer">
+                        <div class="item">
+                            <label>Tên sản phẩm:</label>
+                            <input name="name" placeholder="..." type="text">
+                        </div>
+                        <div class="item">
+                            <label>Thể loại:</label>
+                            <select name="type" id="">
+                        
+                                <option value="all">Tất cả.</option>
+                                <option value="trasua">Trà sữa.</option>
+                                <option value="tratuoi">Trà tươi.</option>
+                                <option value="tratraicay">Trà trái cây.</option>
+                                <option value="kemsua">kem sữa.</option>
+                            </select>
+                        </div>
+                        
+                        <div class="item">
+                            <label>Giá thấp nhất:</label>
+                            <input name="minPrice" placeholder="0" type="number">
+                        </div>
+                        <div class="item">
+                            <label>Giá cao nhất:</label>
+                            <input name="maxPrice" placeholder="0" type="number">
+                        </div>
+                    </div>
+                    <div class="submit">
+                        <button type="submit">Tìm kiếm</button>
+                    </div>
+                </form>
+            </div>
+            
+    </section>
 
-    <div class="products">
-        
-                <!-- <div class="row">  
-                    <img src="./imge/ts1-logo.png" alt="">
-                    <div class="products-text">
-                        <h5>sale</h5>
-                    </div>
-                    <div class="product-card-content">
-                        <div class="price">
-                            <h4 class="name-product"> Trà sũa trân châu</h4>
-                            <p class="price-tea">25.000đ</p>
+    <section id="product">
+        <div class="products">
+            
+                    <!-- <div class="row">  
+                        <img src="./imge/ts1-logo.png" alt="">
+                        <div class="products-text">
+                            <h5>sale</h5>
                         </div>
-                        <div class="buy-btn-container">
-                            <a href="#">mua ngay</a> 
+                        <div class="product-card-content">
+                            <div class="price">
+                                <h4 class="name-product"> Trà sũa trân châu</h4>
+                                <p class="price-tea">25.000đ</p>
+                            </div>
+                            <div class="buy-btn-container">
+                                <a href="#">mua ngay</a> 
+                            </div>
                         </div>
-                    </div>
-                </div> -->
-        </div>
+                    </div> -->
+            </div>
         <p id="notFoundProduct" style="color: #000; display: none; text-align: center;font-size: 16px;">Không tìm thấy sản phẩm!</p>
         <div>
             <ul class="listPage"></ul>

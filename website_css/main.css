@@ -171,7 +171,7 @@ header{
 /* ----het tim kiem sp----*/
 
 section{
-    padding: 5% 10% 0 10%;
+    padding: 3% 10% 0 10%;
 }
 
 /* slider */
@@ -244,13 +244,68 @@ section{
 
 
 
-  /* san pham */
-.product .filters{
+  /* loc san pham */
+
+.icon-bottom-title{
+    margin-bottom: 10px;
+}
+.filter{
+    border-radius: 10px;
+    display: none;
+    /* margin-top: 10px; */
+}
+
+.openFilter{
     display: flex;
-    float: right;
+    justify-content: end;
+    position: relative;
+    margin-bottom: 20px;
+}
+#filterButton{
+    display: flex;
+    justify-content: flex-end;
+    /* float: right; */
+    margin-right: 5%;
+    width: auto;
+    height:40px;
+    padding: 10px;
+    background-color: #c2f0f0;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+}
+#filterContainer{
+    display: flex;
+    justify-content: space-between;
+}
+#filterContainer .item{
+    display: grid;
+    gap: 0.5rem;
+    margin: 10px 5px;
+}
+#filterContainer select,
+#filterContainer input{
+    width: 220px;
+    height: 30px;
+    padding: 0 10px;
+}
+.filter .submit{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center; 
+    margin-top: 10px;
+}
+.filter .submit button{
+    padding: 5px 20px;
+    font-size: 15px;
+
 }
 
 
+ 
+/* tieu dè san pham */
 .center-text-share{
     display:block;
     color: #18191f;
@@ -259,19 +314,20 @@ section{
     font-family: 'Courier New';
     position: relative;
     font-size: 40px;
-    /* font-weight: 500;  */
     margin-bottom: 0;
-    /* letter-spacing: 1.8px; */
+
 }
 
 .icon-bottom-title {
     display: flex; 
     justify-content: center; 
     align-items: center;
-    margin-bottom: 75px;
+    /* margin-bottom: 50px; */
 }
 
+/* ---------sản phẩm------- */
 .products{
+    margin-top: -50px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 0));
     gap: 2rem;
