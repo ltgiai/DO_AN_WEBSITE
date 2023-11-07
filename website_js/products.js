@@ -127,35 +127,14 @@ let products = [
 
 // -------lấy sản phẩm vào trang chủ------
 
-// let lists =document.querySelector('.products')
-// function addProduct() {
-//     products.forEach((value, key) =>{
-//         let newDiv =document.createElement('div')
-//         newDiv.classList.add('row', 'all' , value.type);
-//         newDiv.innerHTML=`
-//         <img src="${value.img}" alt=" ">
-//             <div class="product-text">
-//                 <h5>sale</h5>
-//             </div>
-//             <div class="product-card-content">
-//                 <div class="name-product"> ${value.name} </div>
-//                 <div class="price"> ${value.price}Đ </div>
-//                 <div class="buy-btn-container">
-//                     <button onclick="addtoCart(this)">Mua ngay</button>
-//                 </div>
-//             </div>`;
-//         lists.appendChild(newDiv);
-//     })
-// }
-// addProduct();
-let productsList = document.querySelector('.products');
-
-function addProduct() {
-    const productDivs = products.map(value => {
-        const newDiv = document.createElement('div');
-        newDiv.classList.add('row', 'all', value.type);
-        newDiv.innerHTML = `
-            <img src="${value.img}" alt="">
+let lists =document.querySelector('.products')
+function addProduct(products) {
+    products.forEach((value) =>{
+        let newDiv =document.createElement('div')
+        newDiv.classList.add('row', 'all' , value.type);
+        newDiv.setAttribute('data-id', value.ID);
+        newDiv.innerHTML=`
+        <img src="${value.img}" alt=" ">
             <div class="product-text">
                 <h5>sale</h5>
             </div>
@@ -184,8 +163,7 @@ function addProduct() {
         }
     });
 }
-
-addProduct();
+addProduct(products);
 
 
 // --------phân trang sản phẩm---------
@@ -308,7 +286,7 @@ clearText.onclick = function () {
         isWhite = false;
       }
 }
-
+//timg kiếm theo tên
 const notFoundProduct = document.getElementById("notFoundProduct");
 const nameProduct = document.querySelectorAll(".name-product");
 const value_search =document.getElementById("value_search");
@@ -347,7 +325,61 @@ value_search.addEventListener("keyup", function (event) {
         value_search.value = "";
     }
 });
-    
+
+
+
+
+// -------ẩn hiện filter-------
+document.addEventListener("DOMContentLoaded", function() {
+    const filterButton = document.getElementById("filterButton");
+    const filter = document.querySelector(".filter");
+  
+    filterButton.addEventListener("click", function () {
+      if (filter.style.display == "none" || filter.style.display === "") {
+          filter.style.display = "block";
+      } else {
+          filter.style.display = "none";
+      }
+    });
+  });
+  
+
+
+// ---------lọc nâng cao-----------
+let filterForm = document.getElementById('filterForm');
+
+filterForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    let valueFilter = e.target.elements;
+
+    products.forEach(function (item) {
+        let productElement = document.querySelector(`.products .row[data-id="${item.ID}"]`);
+        if (productElement) {
+            let shouldShow = true;
+
+            if (valueFilter.name.value !== '' && !item.name.toLowerCase().includes(valueFilter.name.value)) 
+                shouldShow = false;
+            if (valueFilter.type.value !== 'all' && item.type !== valueFilter.type.value) 
+                shouldShow = false;
+            if (valueFilter.minPrice.value !== '' && item.price < parseFloat(valueFilter.minPrice.value)) 
+                shouldShow = false;
+            if (valueFilter.maxPrice.value !== '' && item.price > parseFloat(valueFilter.maxPrice.value)) 
+                shouldShow = false;
+            
+            if (shouldShow) {
+                productElement.classList.remove('hide');
+            } else {
+                productElement.classList.add('hide');
+            }
+        }
+    });
+    valueFilter.name.value = '';
+    valueFilter.type.value = 'all';
+    valueFilter.minPrice.value = '';
+    valueFilter.maxPrice.value = '';
+});
+
 
 
 

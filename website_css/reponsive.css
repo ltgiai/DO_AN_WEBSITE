@@ -65,7 +65,7 @@
             flex-direction: column;
             position: absolute;
             top: 0;
-            left: -100%;
+            left: 0;
             width: 50%;
             height: 100vh;
             background-color: #292929c7;
