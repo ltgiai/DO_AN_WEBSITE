@@ -148,20 +148,22 @@ function addProduct(products) {
                     <input style="width:20%" class="sugar-input" type="number" placeholder="Đá" min="0" max="100">
                 </div>
             </div>`;
-
+            lists.appendChild(newDiv);
         return newDiv;
     });
 
-    productDivs.forEach(productDiv => {
-        productsList.appendChild(productDiv);
-    });
-
     // Sử dụng event delegation để quản lý sự kiện mua ngay
-    productsList.addEventListener('click', function (event) {
+    // productsList.addEventListener('click', function (event) {
+    //     if (event.target.classList.contains('buy-btn')) {
+    //         addtoCart(event.target);
+    //     }
+    // });
+    document.addEventListener('click', function (event) {
         if (event.target.classList.contains('buy-btn')) {
             addtoCart(event.target);
         }
     });
+    
 }
 addProduct(products);
 
