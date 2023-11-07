@@ -127,25 +127,66 @@ let products = [
 
 // -------lấy sản phẩm vào trang chủ------
 
-let lists =document.querySelector('.products')
+// let lists =document.querySelector('.products')
+// function addProduct() {
+//     products.forEach((value, key) =>{
+//         let newDiv =document.createElement('div')
+//         newDiv.classList.add('row', 'all' , value.type);
+//         newDiv.innerHTML=`
+//         <img src="${value.img}" alt=" ">
+//             <div class="product-text">
+//                 <h5>sale</h5>
+//             </div>
+//             <div class="product-card-content">
+//                 <div class="name-product"> ${value.name} </div>
+//                 <div class="price"> ${value.price}Đ </div>
+//                 <div class="buy-btn-container">
+//                     <button onclick="addtoCart(this)">Mua ngay</button>
+//                 </div>
+//             </div>`;
+//         lists.appendChild(newDiv);
+//     })
+// }
+// addProduct();
+let productsList = document.querySelector('.products');
+
 function addProduct() {
-    products.forEach((value, key) =>{
-        let newDiv =document.createElement('div')
-        newDiv.classList.add('row', 'all' , value.type);
-        newDiv.innerHTML=`
-        <img src="${value.img}" alt=" ">
+    const productDivs = products.map(value => {
+        const newDiv = document.createElement('div');
+        newDiv.classList.add('row', 'all', value.type);
+        newDiv.innerHTML = `
+            <img src="${value.img}" alt="">
             <div class="product-text">
                 <h5>sale</h5>
             </div>
             <div class="product-card-content">
-                <div class="name-product"> ${value.name} </div>
-                <div class="price"> ${value.price}Đ </div>
-                <div class="buy-btn-container">mua ngay</div>
+                <div class="name-product">${value.name}</div>
+                <div class="price">${value.price}Đ</div>
+                <div class="buy-btn-container">
+                    <button  class="buy-btn">Mua ngay</button>
+                    <input style="width:15%" class="quantity-input" type="number" value="1">
+                    <input style="width:28%" class="ice-input" type="number" placeholder="Đường" min="0" max="100">
+                    <input style="width:20%" class="sugar-input" type="number" placeholder="Đá" min="0" max="100">
+                </div>
             </div>`;
-        lists.appendChild(newDiv);
-    })
+
+        return newDiv;
+    });
+
+    productDivs.forEach(productDiv => {
+        productsList.appendChild(productDiv);
+    });
+
+    // Sử dụng event delegation để quản lý sự kiện mua ngay
+    productsList.addEventListener('click', function (event) {
+        if (event.target.classList.contains('buy-btn')) {
+            addtoCart(event.target);
+        }
+    });
 }
+
 addProduct();
+
 
 // --------phân trang sản phẩm---------
 

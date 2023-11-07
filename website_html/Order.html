@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/website_css/checkout.css">
+    <title>Checkout</title>
+</head>
+<body>
+    <header>
+        <h1>Header</h1>
+    </header>
+    <div class="checkout-form">
+        <h2>Thông tin thanh toán</h2>
+        <form id="checkoutForm">
+            <label for="name">Tên:</label>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="address">Địa chỉ:</label>
+            <input type="text" id="address" name="address" required><br>
+
+            <label for="paymentMethod">Phương thức thanh toán:</label>
+            <select id="paymentMethod" name="paymentMethod">
+                <option value="credit_card">Thẻ tín dụng</option>
+                <option value="paypal">PayPal</option>
+                <option value="cash">Thanh toán khi nhận hàng</option>
+            </select><br>
+            <table>
+                <tr>
+                    <th>Sản phẩm</th>
+                    <th>Tên</th>
+                    <th>Đơn giá</th>
+                    <th>Số lượng</th>
+                    <th>Thành tiền</th>
+                </tr>
+                <tbody id="myCart">
+
+                </tbody>
+            </table>
+            <button type="submit">Xác nhận đơn hàng</button>
+        </form>
+    </div>
+    <footer>
+        <h1>Footer</h1>
+    </footer>
+    <script src="/website_js/Cart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const savedCart = localStorage.getItem('cart');
+            if (savedCart) {
+                const cart = JSON.parse(savedCart);
+                const myCart = document.getElementById('myCart');
+                for (const product of cart) {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td><img src="${product.image}" alt="${product.name}"></td>
+                        <td>${product.name}</td>
+                        <td>${product.price}</td>
+                        <td>${product.quantity}</td>
+                        <td>${parseFloat(product.price)*product.quantity}.000Đ</td>
+                    `;
+                    myCart.appendChild(row);
+                }
+            }
+        });
+        </script>
+</body>
+</html>

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TeaSway</title>
+    <link rel="stylesheet" href="/website_css/style.css">
     <link rel="stylesheet" href="/website_css/main.css">
     <link rel="stylesheet" href="/website_css/reponsive.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,12 +42,28 @@
                 </div>
             </div>
             <a href="#"> <i class="fa-regular fa-user"></i></a>
-            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-    
+            <a onclick="showCart()"><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
-
     </header>
+    <div class="cart" id="showCart">
+        <table class="cart-table">
+            <tr>
+              <th>Sản phẩm</th>
+              <th>Tên</th>
+              <th>Số lượng</th>
+              <th>Đơn giá</th>
+              <th>Thành tiền</th>
+              <th>Xóa</th>
+            </tr>
+            <tbody class="myCart" id="myCart">
 
+            </tbody>
+        </table>
+        <div class="button-use">
+            <a class="purchase" href="Order.html">Thanh toán</a>
+            <button style="float:right; background-color: #000;" onclick="deleteAll()">Xóa tất cả</button>
+        </div>
+    </div>
 
     <section class="slider">
         <div class="slideShow">
@@ -73,23 +90,22 @@
         <!-- <div class="filters" style="width: 100px; height:50px; background-color: #c2f0f0; ">lọc sản phẩm</div> -->
 
 
-    <div class="products">
-        
-                <!-- <div class="row">  
-                    <img src="./imge/ts1-logo.png" alt="">
-                    <div class="products-text">
-                        <h5>sale</h5>
-                    </div>
-                    <div class="product-card-content">
-                        <div class="price">
-                            <h4 class="name-product"> Trà sũa trân châu</h4>
-                            <p class="price-tea">25.000đ</p>
+        <div class="products">
+                    <!-- <div class="row">  
+                        <img src="./imge/ts1-logo.png" alt="">
+                        <div class="products-text">
+                            <h5>sale</h5>
                         </div>
-                        <div class="buy-btn-container">
-                            <a href="#">mua ngay</a> 
+                        <div class="product-card-content">
+                            <div class="price">
+                                <h4 class="name-product"> Trà sũa trân châu</h4>
+                                <p class="price-tea">25.000đ</p>
+                            </div>
+                            <div class="buy-btn-container">
+                                <a href="#">mua ngay</a> 
+                            </div>
                         </div>
-                    </div>
-                </div> -->
+                    </div> -->
         </div>
         <p id="notFoundProduct" style="color: #000; display: none; text-align: center;font-size: 16px;">Không tìm thấy sản phẩm!</p>
         <div>
@@ -190,8 +206,19 @@
                 Copyrights © 2019 by comebuy_vn. All rights reserved.
             </p>
         </div>
-    </section>   
+    </section>
+    <script src="/website_js/Cart.js"></script>   
     <script src="/website_js/products.js"></script>
     <script src="/website_js/main.js"></script>
+    <script>
+        const cartContainer = document.getElementById('showCart');
+            cartContainer.addEventListener('mousewheel', (event) => {
+            if (event.deltaY > 0) {
+                cartContainer.scrollTop += 50; 
+            } else {
+                cartContainer.scrollTop -= 50; 
+            }
+        });
+    </script>
 </body>
 </html>
