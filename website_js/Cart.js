@@ -129,3 +129,12 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById("myCart").innerHTML = infoCart;
     }
 });
+
+document.addEventListener('DOMContentLoaded', function acceptOrder(){
+    var ckform = document.getElementById("checkout-form")
+    var hoten = ckform.querySelector('name').innerText;
+    var sdt = ckform.querySelector('numberPhone').innerText;
+    var diaChi = ckform.querySelector('address').innerText;
+    var customer = new Array(hoten, sdt , diaChi);
+    localStorage.setItem("customer", JSON.stringify(customer));
+});

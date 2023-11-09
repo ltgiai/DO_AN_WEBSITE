@@ -1,5 +1,8 @@
-.checkout-form {
-    width: 80%;
+body{
+    margin:0;
+}
+#checkout-form {
+    width: 60%;
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #ccc;
@@ -32,7 +35,7 @@ label {
 }
 
 input[type="text"],
-input[type="email"],
+input[type="number"],
 select {
     width: 100%;
     padding: 8px;
@@ -63,9 +66,11 @@ table {
 table th, table td {
     border: 1px solid #ccc;
     padding: 10px;
-    text-align: left;
+    text-align: center;
 }
-
+table[display="table"] {
+    display: table;
+}
 table th {
     background: #f5f5f5;
     font-weight: bold;

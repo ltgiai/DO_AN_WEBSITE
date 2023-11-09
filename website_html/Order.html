@@ -10,14 +10,14 @@
     <header>
         <h1>Header</h1>
     </header>
-    <div class="checkout-form">
+    <div id="checkout-form">
         <h2>Thông tin thanh toán</h2>
         <form id="checkoutForm">
             <label for="name">Tên:</label>
             <input type="text" id="name" name="name" required><br>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required><br>
+            <label for="numberPhone">NumberPhone:</label>
+            <input type="text" id="numberPhone" name="numberPhone" required><br>
 
             <label for="address">Địa chỉ:</label>
             <input type="text" id="address" name="address" required><br>
@@ -43,6 +43,11 @@
             <button type="submit">Xác nhận đơn hàng</button>
         </form>
     </div>
+    <div class="thankyou-message" id="thankyouMessage" style="display: none;">
+        <h2>Cảm ơn bạn đã đặt hàng!</h2>
+        <p style="text-align: center;">Đơn hàng của bạn đã được xác nhận vào ngày <span id="orderDate"></span></p>
+
+    </div>
     <footer>
         <h1>Footer</h1>
     </footer>
@@ -57,7 +62,7 @@
                     const row = document.createElement('tr');
                     row.innerHTML = `
                         <td><img src="${product.image}" alt="${product.name}"></td>
-                        <td>${product.name}</td>
+                        <td>${product.name} <br> Đá:  ${product.ice} <br> Đường: ${product.sugar}</td>
                         <td>${product.price}</td>
                         <td>${product.quantity}</td>
                         <td>${parseFloat(product.price)*product.quantity}.000Đ</td>
@@ -66,6 +71,40 @@
                 }
             }
         });
-        </script>
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const checkoutForm = document.getElementById('checkout-form');
+            const thankyouMessage = document.getElementById('thankyouMessage');
+            const orderDate = document.getElementById('orderDate');
+            const myCartTable = document.getElementById('myCart');
+            checkoutForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                // Lấy ngày hiện tại
+                const currentDate = new Date();
+                const day = String(currentDate.getDate()).padStart(2, '0');
+                const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+                const year = currentDate.getFullYear();
+                const formattedDate = `${day}-${month}-${year}`; // Định dạng ngày hiện tại
+
+                // Hiển thị lời cảm ơn và thông tin đơn hàng
+                thankyouMessage.style.display = 'block';
+                orderDate.textContent = formattedDate; // Hiển thị ngày đơn hàng
+
+                checkoutForm.style.display = 'none';
+
+                // myCartTable.style.display = 'table';
+
+                
+
+                // Xóa thông tin giỏ hàng sau khi xác nhận đơn hàng (tuỳ chọn)
+                cart = [];
+                localStorage.setItem('cart', JSON.stringify(cart));
+                setTimeout(function () {
+                    window.location.href = '/website_html/main.html';
+                }, 3000);
+            });
+        });
+    </script>
 </body>
 </html>
