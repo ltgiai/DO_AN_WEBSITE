@@ -1,134 +1,230 @@
+/*==========================LEFT MENU SIDE BAR ================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body{
-    margin: 0px;
-    background-image:
-        linear-gradient(to bottom right, beige, orange);
-    background-attachment: fixed;
+    background-color: whitesmoke;
 }
 
-#sidebar{
-    width: 250px;
-    height: 1000px;
-    float: left;
-    position: fixed;
-    border-right: solid gold 2px;
+#leftmenu{
+	width: 80px;
+	overflow: hidden;
+	height: 100vh;
+	background-color: palegoldenrod;
+	position: fixed;
+	transition: 0.5s;
 }
 
-#page-form{
-    width: 900px;
+#leftmenu .logo{
+	width: 220px;
+	height: 100px;
+	background-color: palegoldenrod;
+    display: flex;
+}
+
+#leftmenu .logo img{
+    width: 80px;
+	height: 100px;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+#leftmenu .logo div{
+    color: black;
+    
+    width: 100%;
+    position: relative;
+}
+
+.name{
+    position: absolute;
+    font-size: 30px;
+    font-family: 'Dancing Script', cursive;
+    top : 30px;
+    left: 0px;
+}
+
+#leftmenu:hover .logo img{
+    width: 80px;
+	height: 100px;
+    object-fit: cover;
+}
+
+
+#leftmenu ul li{
+	width: 100%;
+	display: flex;
+	list-style-type: none;
+	border-bottom: 1px solid black;
+}
+
+#leftmenu ul li:hover{
+	background-color: darkslategray;
+    border-bottom: solid 5px white;
+}
+
+#leftmenu span:hover{
+    color: white;
+}
+
+#leftmenu ul li img{
+	width: 60px;
+	height: 50px;
+	padding-left: 30px;
+    object-fit: scale-down;
+}
+#leftmenu ul li span{
+	text-decoration: none;
+	color: black;
+	font-size: 14pt;
+	display: inline-block;
+	width: calc(100% - 50px);
+	height: 50px;
+	line-height: 50px;
+	padding-left: 20px;
+	opacity: 0;
+}
+#leftmenu:hover{
+	width: 220px;
+}
+
+#leftmenu:hover ul li span{
+	opacity: 1;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+#leftmenu:hover .logo{
+	color: white;
+}
+
+/*================================== DANH SACH SAN PHAM ====================================*/
+/* .content-tab{
+    width: 1000px;
     height: auto;
     position: relative;
-    left: 350px;
+    left: 250px;
     top: 30px;
+    background-color: white;
+    border: solid 2px whitesmoke;
+} */
+
+.content-tab .tab{
+    display: none
+}
+
+.content-tab .tab.active{
+    display: block;
+    width: 1000px;
+    height: auto;
+    margin: 0px 230px;
     background-color: white;
     border: solid 2px whitesmoke;
 }
 
-#page-product{
-    width: 900px;
+.tab{
+    width: 1000px;
     height: auto;
-    position: relative;
-    left: 350px;
-    top: 50px;
     background-color: white;
-    border: solid darkred;
-    margin-bottom: 100px;
-}
-
-.sidebar-logo{
-    width: 250px;
-    height: 100px;
-    background-color: lightgoldenrodyellow;
-}
-
-.sidebar-logo img{
-    width: 80%;
-    height: 70%;
-    margin: 10px 20px;
-}
-
-.sidebar-title {
-    width: 250px;
-    height: 80px;
-    background-color: lightgoldenrodyellow;
-}
-
-.sidebar-title span{
-    padding: 10px;
-    font-size: 30px;
-    font-family: monospace;
-    font-weight: bolder;
-    position: relative;
-    color: goldenrod;
-    top: 15px;
-}
-
-.sidebar-menu{
-    width: 250px;
-    height: 1000px;
-    background-color:lightgoldenrodyellow;
-
-}
-
-.sidebar-menu__list a{
-    display: block;
-    margin-bottom: 10px;
-    margin-left: 20px;
-    margin-right: 20px;
-    padding: 5px;
-    text-decoration: none;
-    text-align: center;
-    color: goldenrod;
-    width: auto;
-    font-size: larger;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: white;
-    border: solid goldenrod 2px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.sidebar-menu__list a:hover{
-    color: white;
-    background-color: goldenrod;
+    border: solid 2px whitesmoke;
+    margin-bottom: 50px;
 }
 
 .page-form__title{
     background-color: white;
-    color: gold;
+    color: black;
     margin-top: 30px;
-    font-size: 30px;
+    font-size: 40px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bolder;
-    height: 30px;
+    height: auto;
     text-align: center;
     border-radius: 2px;
     padding: 5px;
 }
 
-.container-input{
-    margin: 10px 30px;
+.page-form__content{
+    padding: 15px;
 }
 
-input{
-    width: 300px;
-    height: 20px;
-    margin-bottom: 10px;
+.input-box{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
+    row-gap: 10px;
+    column-gap: 50px;
+    padding: 20px 20px;
 }
 
-button{
-    width: 70px;
-    height: 30px;
-    background-color: lightgoldenrodyellow;
-    border-color: gold;
-    color: darkred;
-    cursor: pointer;
+.input-box .box-element{
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-element input{
+    width: 100%;
+    padding: 5px;
+    border: none;
+    background-color: transparent;
+    border: 1px solid #ddd;
+    outline: none;
+}
+
+.box-element select{
+    width: 100%;
+    padding: 5px;
+    border: none;
+    background-color: transparent;
+    border: 1px solid #ddd;
+    outline: none;
+}
+
+.option-ctn{
+    background-color: white;
+    color: black;
+    font-size: 15px;
+}
+
+.box-element label{
+    display: inline-block;
+    width: 50%;
+    font-family: sans-serif;
     font-weight: bold;
 }
 
-button:hover{
-    background-color: darkred;
-    border-color: whitesmoke;
+.button-option{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 50px;
+    padding: 20px;
+    width: 600px;
+    margin-left: 180px;
+}
+
+#Update-button{
+    position: relative;
+    right: 305px;
+    display: none;
+}
+
+.button-option button{
+    padding: 5px;
+    font-family: sans-serif;
+    font-weight: bold;
+    background-color: white;
+    border: solid 2px darkslategray;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.button:hover{
     color: white;
+    background-color: darkslategray;
 }
 
 .table-btn{
@@ -140,34 +236,209 @@ button:hover{
     margin-right: 10px;
 }
 
+.database{
+    width: auto;
+    margin: 0px 20px;
+}
+
 .database-heading{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     background-color: white;
     font-weight: bold;
-    gap: 1px;
 }
 
 .heading-name{
-    background-color: gold;
-    width: auto;
-    color: white;
+    background-color: whitesmoke;
+    color: black;
     text-align: center;
     font-family: sans-serif;
+    border: solid 1px black;
     padding: 10px;
+    width: 155px;
 }
 
 .table-content{
     background-color: white;
-    padding: 10px;
-    text-align: center;
+    width: 155px;
+    height: 70px;
+    text-align: left;
+    border: solid 1px black;
+    display: flex;
+    align-items: center;
 }
 
 .table-content span{
+    margin-left: 20px;
+}
+
+.table-img{
+    width: 155px;
 }
 
 .table-img img{
-    width: 130px;
+    width: 100px;
+    height: 65px;
+    object-fit: scale-down;
+}
+
+.btn{
+    padding: 0;
+    width: 100px;
+    height: 30px;
+    font-family: sans-serif;
+    font-weight: bold;
+    background-color: white;
+    border: solid 2px darkred;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btn:hover{
+    color: white;
+    background-color: darkred;
+}
+
+/**======================= DANH SACH DON HANG ==================================**/
+.order-database-container{
+    background-color: white;
+    width: 100%;
+    height: 1000px;
+    padding: 30px;
+}
+
+.order-table{
+    background-color: white;
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr ;
+    text-align: center;
+}
+
+.order-heading{
+    border: solid 1px black;
+    height: 50px;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.order-content{
+    border: solid 1px black;
+    height: 50px;
+    padding: 10px;
+}
+
+#btn-checked{
+    width: 100px;
+    padding: 3px;
+    font-weight: bold;
+    color: darkred;
+    background-color: white;
+    border: solid darkred 2px;
+}
+
+/*Box check sản phẩm*/
+.check-product-container{
+    display: none;
+    width: 800px;
+    height: 300px;
+    margin: auto;
+    background-image: linear-gradient(azure,white);
+    border: solid black 1px;
+    border-radius: 10px;
+    position: relative;
+    bottom: 130px;
+}
+
+.check-product-box-title{
+    padding: 10px;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+}
+
+.check-product-box{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    text-align: center;
+    padding: 10px;
+}
+
+.check-product-heading{
+    font-weight: bold;
+    padding: 5px;
+}
+
+.check-product-row{
+    border: solid black 1px;
+    padding: 5px;   
+}
+
+.check-product-button{
+    padding: 2px;
+    height: 30px;
+    font-family: sans-serif;
+    font-weight: bold;
+    width: 100px;
+    color: darkorange;
+    transition: 0.3s;
+    background-color: #ffffff;
+    border: solid 2px darkorange;
+    cursor: pointer;
+}
+
+.check-product-button:hover{
+    background-color: gold;
+    color: black;
+}
+
+.check-product-close{
+    position: absolute;
+    top: 250px;
+    left: 370px;
+}
+
+.check-product-close button{
+    background-color: #fff;
+    padding: 5px;
+    width: 75px;
+    font-size: 15px;
+    font-weight: bold;
+    border-color: darkred;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.check-product-close button:hover{
+    background-color: darkred;
+    color: white;
+}
+
+/**======================= DANH SACH TAI KHOAN ==================================**/
+.login-database-container{
+    background-color: white;
+    width: 100%;
+    height: 1000px;
+    padding: 30px;
+}
+
+.login-table{
+    background-color: white;
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    text-align: center;
+}
+
+
+.login-heading{
+    border: solid 1px black;
+    height: 50px;
+    padding: 10px;
+    font-weight: bold;
 }
 
 
