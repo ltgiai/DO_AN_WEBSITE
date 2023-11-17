@@ -193,7 +193,6 @@ function showOrderCheck(index){
 
     let orderNumber = 1;
     let cart_detail = order[index].cart
-    console.log(cart)
     orderCheckContent = '<div class="order-check-content">STT</div>' +
                         '<div class="order-check-content">Tên sản phẩm</div>' +
                         '<div class="order-check-content">Đơn giá</div>' +
