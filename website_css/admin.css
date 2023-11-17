@@ -13,30 +13,28 @@ body{
 	width: 80px;
 	overflow: hidden;
 	height: 100vh;
-	background-color: palegoldenrod;
+	background-color: cadetblue;
 	position: fixed;
 	transition: 0.5s;
 }
 
-#leftmenu .logo{
-	width: 220px;
+#leftmenu .logo {
+    width: 500px;
 	height: 100px;
-	background-color: palegoldenrod;
-    display: flex;
+	background-color: brown;
+    display: block;
 }
 
 #leftmenu .logo img{
-    width: 80px;
-	height: 100px;
+    margin-left: 5px;
+    zoom: 70%;
+    width: 400px;
     object-fit: cover;
-    transition: 0.5s;
+    transition: 0.5s;   
 }
 
 #leftmenu .logo div{
     color: black;
-    
-    width: 100%;
-    position: relative;
 }
 
 .name{
@@ -48,9 +46,9 @@ body{
 }
 
 #leftmenu:hover .logo img{
-    width: 80px;
-	height: 100px;
-    object-fit: cover;
+	zoom: 50%;
+    transition: all 0.6s linear;
+    transform: translateY(20px);
 }
 
 
@@ -88,7 +86,7 @@ body{
 	opacity: 0;
 }
 #leftmenu:hover{
-	width: 220px;
+	width: 225px;
 }
 
 #leftmenu:hover ul li span{
@@ -262,7 +260,6 @@ body{
     background-color: white;
     width: 155px;
     height: 70px;
-    text-align: left;
     border: solid 1px black;
     display: flex;
     align-items: center;
@@ -278,7 +275,7 @@ body{
 
 .table-img img{
     width: 100px;
-    height: 65px;
+    height: 69px;
     object-fit: scale-down;
 }
 
@@ -312,7 +309,7 @@ body{
     width: 100%;
     height: auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr ;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     text-align: center;
 }
 
@@ -321,12 +318,7 @@ body{
     height: 50px;
     padding: 10px;
     font-weight: bold;
-}
-
-.order-content{
-    border: solid 1px black;
-    height: 50px;
-    padding: 10px;
+    background-color: whitesmoke;
 }
 
 #btn-checked{
@@ -338,87 +330,90 @@ body{
     border: solid darkred 2px;
 }
 
+.check-order-status-optn{
+    padding: 5px;
+    background-color: white;
+    border: solid 2px black;
+    font-weight: bold;
+    color: darkred;
+}
+
+.check-order-status-optn option{
+    background-color: darkred;
+    color: white;
+    font-weight: bold;
+}
+
+.check-order-btn{
+    background-color: white;
+    cursor: pointer;
+    font-weight: bold;
+    color: orange;
+}
+
+.check-order-btn:hover{
+    background-color: orange;
+    color: white;
+}
+
 /*Box check sản phẩm*/
-.check-product-container{
+.order-check-container{
     display: none;
-    width: 800px;
-    height: 300px;
-    margin: auto;
-    background-image: linear-gradient(azure,white);
-    border: solid black 1px;
-    border-radius: 10px;
-    position: relative;
-    bottom: 130px;
+    width: 780px;
+    height: 400px;
+    background-color: white;
+    position: fixed;
+    left: 300px;
+    top: 130px;
+    border-radius: 20px;
+    border: solid 1px black;
+    padding: 15px;
 }
 
-.check-product-box-title{
-    padding: 10px;
-    font-family: sans-serif;
-    font-weight: bold;
-    font-size: 25px;
+.order-check-title{
     text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 10px;
 }
 
-.check-product-box{
+.order-check-table{
+    background-color: white;
+    width: 200px;
+    height: auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    text-align: center;
-    padding: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
 }
 
-.check-product-heading{
-    font-weight: bold;
+.order-check-content{
+    border: solid 1px black;
     padding: 5px;
-}
-
-.check-product-row{
-    border: solid black 1px;
-    padding: 5px;   
-}
-
-.check-product-button{
-    padding: 2px;
+    width: 150px;
     height: 30px;
-    font-family: sans-serif;
+    text-align: center;
     font-weight: bold;
-    width: 100px;
-    color: darkorange;
-    transition: 0.3s;
-    background-color: #ffffff;
-    border: solid 2px darkorange;
-    cursor: pointer;
 }
 
-.check-product-button:hover{
-    background-color: gold;
-    color: black;
-}
-
-.check-product-close{
-    position: absolute;
-    top: 250px;
-    left: 370px;
-}
-
-.check-product-close button{
-    background-color: #fff;
+.order-check-close{
     padding: 5px;
-    width: 75px;
-    font-size: 15px;
     font-weight: bold;
-    border-color: darkred;
+    background-color: white;
+    border: solid 2px darkred;
+    color: darkred;
+    margin: 5px 0px;
+    width: 70px;
+    margin-left: 350px;
     cursor: pointer;
-    transition: 0.4s;
 }
 
-.check-product-close button:hover{
+.order-check-close:hover{
     background-color: darkred;
     color: white;
 }
 
 /**======================= DANH SACH TAI KHOAN ==================================**/
 .login-database-container{
-    background-color: white;
+    background-color: #ffffff;
     width: 100%;
     height: 1000px;
     padding: 30px;
@@ -436,7 +431,7 @@ body{
 
 .login-heading{
     border: solid 1px black;
-    height: 50px;
+    height: 40px;
     padding: 10px;
     font-weight: bold;
 }

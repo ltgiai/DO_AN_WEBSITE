@@ -38,12 +38,12 @@ function addItem(){
     }
 
     if(item.ID == ''){
-        alert("Vui long nhap ID")
+        alert("Vui lòng nhập ID !")
     }
     else{
         for(let i=0; i<product.length; i++){
             if(item.ID == product[i].ID){
-                alert("ID bi trung lap")
+                alert("ID đã tồn tại !")
                 break
             }
             else{
@@ -161,25 +161,57 @@ function main_redirect(){
 //========================================== DANH SÁCH ĐƠN HÀNG ===================================================
 function showOrderCustomer(){
     let order = JSON.parse(localStorage.getItem('order'))
-    console.log(order.length)
     orderTable = '<div class="order-heading">ID</div>' +
                 '<div class="order-heading">Tên khách hàng</div>' +
                 '<div class="order-heading">Đơn hàng</div>' +
                 '<div class="order-heading">Số điện thoại</div>' +
                 '<div class="order-heading">Địa chỉ</div>' +
-                //'<div class="order-heading">Tổng tiền</div>' +
+                '<div class="order-heading">Tổng tiền</div>' +
                 '<div class="order-heading">Tình trạng</div>'
     let id = 1;
     for(let i=0; i<order.length; i++){
         orderTable += '<div class="order-heading">' + (id++) + '</div>' +
         '<div class="order-heading">' + order[i].name + '</div>' +
+        '<button class="check-order-btn" onclick="showOrderCheck(' + i + ')">Xem đơn hàng</button>' +
         '<div class="order-heading">' + order[i].name + '</div>' +
-        '<div class="order-heading">' + order[i].phone + '</div>' +
         '<div class="order-heading">' + order[i].address + '</div>' +
-        '<div class="order-heading">' + order[i].address + '</div>'
+        '<div class="order-heading">' + order[i].address + '</div>' +
+        '<div class="order-heading">' +
+            '<select type="text" class="check-order-status-optn">' +
+                '<option value="isDelivered">Đã giao hàng</option>' +
+                '<option value="isNotDelivered">Đang xử lí</option>' +
+            '</select>' +
+        '</div>' 
     }
-    console.log(orderTable)
     document.getElementById('render-order').innerHTML = orderTable
+}
+
+function showOrderCheck(index){
+    let orderCheck = document.querySelector('.order-check-container'); 
+    let order = JSON.parse(localStorage.getItem('order'))
+    orderCheck.style.display = 'block';
+
+    let orderNumber = 1;
+    let cart_detail = order[index].cart
+    console.log(cart)
+    orderCheckContent = '<div class="order-check-content">STT</div>' +
+                        '<div class="order-check-content">Tên sản phẩm</div>' +
+                        '<div class="order-check-content">Đơn giá</div>' +
+                        '<div class="order-check-content">Số lượng</div>' +
+                        '<div class="order-check-content">Thành tiền</div>'
+    for(let i=0; i<cart_detail.length; i++){
+            orderCheckContent += '<div class="order-check-content">' + (orderNumber++) + '</div>' +
+            '<div class="order-check-content">' + cart_detail[i].name + '</div>' +
+            '<div class="order-check-content">' + cart_detail[i].price + '</div>' +
+            '<div class="order-check-content">' + cart_detail[i].quantity + '</div>' +
+            '<div class="order-check-content">Thành tiền</div>'
+    }
+    document.querySelector('.order-check-table').innerHTML = orderCheckContent
+}
+
+function hideOrderCheck(){
+    var hideOrderCheck = document.querySelector('.order-check-container')
+    hideOrderCheck.style.display = 'none'
 }
 
 

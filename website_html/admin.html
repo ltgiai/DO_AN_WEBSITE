@@ -15,9 +15,6 @@
         <div id="leftmenu" class="nav">
              <div class="logo">
                 <img src="/imge/logo_bobaus_real.png" alt="Since1999">
-                <div>
-                    <span class="name">Boba Us</span>
-                </div>
             </div>
             <ul class="navTab">
                 <li onclick="show()"><img src="/imge/icon_product.jpg"><span class="nav-item active pro" data-target="tab1">Sản phẩm</span></li>
@@ -85,32 +82,52 @@
                 <div class="page-form__title">DANH SÁCH ĐƠN HÀNG</div>
                 <div class="order-database-container">
                     <div class="order-table" id="render-order">
-                        <!-- <div class="order-heading">ID</div>
+                        <div class="order-heading">ID</div>
                         <div class="order-heading">Tên khách hàng</div>
                         <div class="order-heading">Đơn hàng</div>
                         <div class="order-heading">Số điện thoại</div>
                         <div class="order-heading">Địa chỉ</div>
                          <div class="order-heading">Tổng tiền</div> 
-                        <div class="order-heading">Tình trạng</div> -->
+                        <div class="order-heading">Tình trạng</div>
+
+                        <div class="order-heading">ID</div>
+                        <div class="order-heading">Tên khách hàng</div>
+                        <div class="order-heading">
+                            <button class="check-order-btn" onclick="showOrderCheck()">Xem đơn hàng</button>
+                        </div>
+                        <div class="order-heading">Số điện thoại</div>
+                        <div class="order-heading">Địa chỉ</div>
+                        <div class="order-heading">Tổng tiền</div> 
+                        <div class="order-heading">
+                            <select type="text" class="check-order-status-optn">
+                                <option value="isDelivered">Đã giao hàng</option>
+                                <option value="isNotDelivered">Đang xử lí</option>
+                            </select>
+                        </div>
                     </div>
-                    <!-- <div class="check-product-container">
-                        <div class="check-product-box-title">Đơn hàng sản phẩm đã chọn</div>
-                        <div class="check-product-box">
-                            <div class="check-product-row check-product-heading">STT</div>
-                            <div class="check-product-row check-product-heading">Tên sản phẩm</div>
-                            <div class="check-product-row check-product-heading">Đơn giá</div>
-                            <div class="check-product-row check-product-heading">Số lượng</div>
-                            <div class="check-product-row check-product-heading">Thành tiền</div>
-                            <div class="check-product-row check-product-heading">STT</div>
-                            <div class="check-product-row check-product-heading">Tên sản phẩm</div>
-                            <div class="check-product-row check-product-heading">Đơn giá</div>
-                            <div class="check-product-row check-product-heading">Số lượng</div>
-                            <div class="check-product-row check-product-heading">Thành tiền</div>
+                    <div class="order-check-container">
+                        <div class="order-check-title">Danh Sách Đơn Hàng</div>
+                        <div class="order-check-table">
+                            <div class="order-check-content">STT</div>
+                            <div class="order-check-content">Tên sản phẩm</div>
+                            <div class="order-check-content">Đơn giá</div>
+                            <div class="order-check-content">Số lượng</div>
+                            <div class="order-check-content">Thành tiền</div>
+
+                            <div class="order-check-content">STT</div>
+                            <div class="order-check-content">Tên sản phẩm</div>
+                            <div class="order-check-content">Đơn giá</div>
+                            <div class="order-check-content">Số lượng</div>
+                            <div class="order-check-content">Thành tiền</div>
+                            
+                            <div class="order-check-content">STT</div>
+                            <div class="order-check-content">Tên sản phẩm</div>
+                            <div class="order-check-content">Đơn giá</div>
+                            <div class="order-check-content">Số lượng</div>
+                            <div class="order-check-content">Thành tiền</div>
                         </div>
-                        <div class="check-product-close">
-                            <button onclick="closeCheckProductBox()">Thoát</button>
-                        </div>
-                    </div> -->
+                        <button class="order-check-close" onclick="hideOrderCheck()">Exit</button>
+                    </div>
                 </div>
             </div>
 
@@ -137,5 +154,6 @@
     <script src="/website_js/admin.js"></script>
     <script src="/website_js/products.js"></script>
     <script src="/website_js/Cart.js"></script>
+    <script src="/website_js/users.js"></script>
 </body>
 </html>

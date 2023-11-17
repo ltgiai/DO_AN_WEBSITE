@@ -1,7 +1,6 @@
 document.getElementById("showCart").style.display="none";
 
 var cart = new Array();
-
 function addtoCart(x) {
     const productDiv = x.closest('.row');
     const image = productDiv.querySelector('img').src;
@@ -30,10 +29,10 @@ function addtoCart(x) {
     }
     if(!kt){
         cart.push(product);
+        console.log(cart);
     }
 
     // cart.push(product);
-    console.log(cart);
     localStorage.setItem('cart',JSON.stringify(cart));
 }
 
@@ -96,6 +95,7 @@ function showCart(){
     }
     showMycart();
 }
+
 document.addEventListener('DOMContentLoaded', function () {
     const savedCart = localStorage.getItem('cart');
     if (savedCart) {
@@ -136,10 +136,11 @@ document.addEventListener('DOMContentLoaded', function acceptOrder(){
     var sdt = ckform.querySelector('numberPhone').innerText;
     var diaChi = ckform.querySelector('address').innerText;
     var customer = new Array(hoten, sdt , diaChi);
-    localStorage.setItem("order", JSON.stringify(customer));
     localStorage.setItem("customer", JSON.stringify(customer));
 });
 
 console.log(document.getElementById('name'))
 console.log(document.getElementById('numberPhone'))
 console.log(document.getElementById('address'))
+
+localStorage.setItem("customer", JSON.stringify(customer));
