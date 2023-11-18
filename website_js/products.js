@@ -125,6 +125,12 @@ let products = [
     },
 ];
 
+// localStorage.setItem('productsList',JSON.stringify(products))
+
+if (localStorage.getItem('productsList') == null) {
+    localStorage.setItem('productsList',JSON.stringify(products));
+}
+
 // -------lấy sản phẩm vào trang chủ------
 let lists =document.querySelector('.products')
 function addProduct(products) {

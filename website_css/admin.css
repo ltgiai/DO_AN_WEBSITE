@@ -246,7 +246,7 @@ body{
     font-weight: bold;
 }
 
-.heading-name{
+.products-heading{
     background-color: whitesmoke;
     color: black;
     text-align: center;
@@ -256,7 +256,7 @@ body{
     width: 155px;
 }
 
-.table-content{
+.products-content{
     background-color: white;
     width: 155px;
     height: 70px;
@@ -265,15 +265,15 @@ body{
     align-items: center;
 }
 
-.table-content span{
+.products-content span{
     margin-left: 20px;
 }
 
-.table-img{
+.products-img{
     width: 155px;
 }
 
-.table-img img{
+.products-img img{
     width: 100px;
     height: 68px;
     object-fit: scale-down;
@@ -310,16 +310,19 @@ body{
     height: auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    row-gap: 20px;
     text-align: center;
 }
 
 .order-heading{
-    border: solid 1px black;
+    border-bottom: solid 1px black;
     height: 50px;
     padding: 10px;
     font-weight: bold;
-    background-color: whitesmoke;
+    background-color: white;
 }
+
+.order
 
 #btn-checked{
     width: 100px;
@@ -346,6 +349,7 @@ body{
 
 .check-order-btn{
     background-color: white;
+    border:none;
     cursor: pointer;
     font-weight: bold;
     color: orange;
@@ -394,6 +398,12 @@ body{
     font-weight: bold;
 }
 
+.order-check-end{
+    font-weight: bold;
+    font-size: 20px;
+    margin: 20px 0;
+}
+
 .order-check-close{
     padding: 5px;
     font-weight: bold;
@@ -412,14 +422,14 @@ body{
 }
 
 /**======================= DANH SACH TAI KHOAN ==================================**/
-.login-database-container{
+.users-database-container{
     background-color: #ffffff;
     width: 100%;
     height: 1000px;
     padding: 30px;
 }
 
-.login-table{
+.users-table{
     background-color: white;
     width: 100%;
     height: auto;
@@ -429,8 +439,8 @@ body{
 }
 
 
-.login-heading{
-    border: solid 1px black;
+.users-heading{
+    border-bottom: solid 1px black;
     height: 40px;
     padding: 10px;
     font-weight: bold;

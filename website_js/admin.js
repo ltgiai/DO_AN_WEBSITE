@@ -71,20 +71,20 @@ function deleteItem(x) {
 //Xuất ra DANH SÁCH SẢN PHẨM 
 function show(){
     let product = JSON.parse(localStorage.getItem('productsList'))
-    table = '<div class="heading-name">ID</div>' +
-    '<div class="heading-name">Hình ảnh</div>' +
-    '<div class="heading-name">Tên</div>' +
-    '<div class="heading-name">Thể loại</div>' +    
-    '<div class="heading-name">Đơn giá</div>' +
-    '<div class="heading-name">Chức năng</div>'
+    table = '<div class="products-heading">ID</div>' +
+    '<div class="products-heading">Hình ảnh</div>' +
+    '<div class="products-heading">Tên</div>' +
+    '<div class="products-heading">Thể loại</div>' +    
+    '<div class="products-heading">Đơn giá</div>' +
+    '<div class="products-heading">Chức năng</div>'
     
     for(let i=0; i<product.length; i++){
-        table += '<div class="table-content"><span>' + product[i].ID + '</span></div>'
-         + '<div class="table-content table-img"><img src="' + product[i].img + '"></div>'
-         + '<div class="table-content"><span>' + product[i].name + '</span></div>'
-         + '<div class="table-content"><span>' + product[i].type + '</span></div>'
-         + '<div class="table-content"><span>' + product[i].price + '</span></div>'
-         + '<div class="table-content table-btn">' +
+        table += '<div class="products-content"><span>' + product[i].ID + '</span></div>'
+         + '<div class="products-content products-img"><img src="' + product[i].img + '"></div>'
+         + '<div class="products-content"><span>' + product[i].name + '</span></div>'
+         + '<div class="products-content"><span>' + product[i].type + '</span></div>'
+         + '<div class="products-content"><span>' + product[i].price + '</span></div>'
+         + '<div class="products-content table-btn">' +
                     '<button class="btn" onclick="editItem(' + i + ')">Edit</button>' +
                     '<button class="btn" onclick="deleteItem(' + i + ')">Delete</button>' +
                 '</div>'
@@ -93,7 +93,6 @@ function show(){
 }
 
 //Tìm kiếm sản phẩm trong DANH SÁCH SẢN PHẨM
-
 function findItem(x){
     let product = JSON.parse(localStorage.getItem('productsList'))
     table = '<div class="heading-name">ID</div>' +
@@ -159,6 +158,10 @@ function main_redirect(){
 }
 
 //========================================== DANH SÁCH ĐƠN HÀNG ===================================================
+if (localStorage.getItem('order') == null) {
+    localStorage.setItem('order',JSON.stringify([]));
+}
+
 function showOrderCustomer(){
     let order = JSON.parse(localStorage.getItem('order'))
     orderTable = '<div class="order-heading">ID</div>' +
@@ -170,12 +173,17 @@ function showOrderCustomer(){
                 '<div class="order-heading">Tình trạng</div>'
     let id = 1;
     for(let i=0; i<order.length; i++){
+        let total = 0;
+        let order_price = order[i].cart
+        for(let j=0; j<order_price.length; j++){
+            total += parseFloat(order_price[j].price) * parseFloat(order_price[j].quantity)
+        }
         orderTable += '<div class="order-heading">' + (id++) + '</div>' +
         '<div class="order-heading">' + order[i].name + '</div>' +
         '<button class="check-order-btn" onclick="showOrderCheck(' + i + ')">Xem đơn hàng</button>' +
-        '<div class="order-heading">' + order[i].name + '</div>' +
+        '<div class="order-heading">' + order[i].phone + '</div>' +
         '<div class="order-heading">' + order[i].address + '</div>' +
-        '<div class="order-heading">' + order[i].address + '</div>' +
+        '<div class="order-heading">' + total + '.000Đ' + '</div>' +
         '<div class="order-heading">' +
             '<select type="text" class="check-order-status-optn">' +
                 '<option value="isDelivered">Đã giao hàng</option>' +
@@ -186,12 +194,13 @@ function showOrderCustomer(){
     document.getElementById('render-order').innerHTML = orderTable
 }
 
-function showOrderCheck(index){
+function showOrderCheck(index,total){
     let orderCheck = document.querySelector('.order-check-container'); 
     let order = JSON.parse(localStorage.getItem('order'))
     orderCheck.style.display = 'block';
 
     let orderNumber = 1;
+    let totalPrice = 0;
     let cart_detail = order[index].cart
     orderCheckContent = '<div class="order-check-content">STT</div>' +
                         '<div class="order-check-content">Tên sản phẩm</div>' +
@@ -199,13 +208,16 @@ function showOrderCheck(index){
                         '<div class="order-check-content">Số lượng</div>' +
                         '<div class="order-check-content">Thành tiền</div>'
     for(let i=0; i<cart_detail.length; i++){
+            let totalEachProduct = parseFloat(cart_detail[i].price) * parseFloat(cart_detail[i].quantity)
             orderCheckContent += '<div class="order-check-content">' + (orderNumber++) + '</div>' +
             '<div class="order-check-content">' + cart_detail[i].name + '</div>' +
             '<div class="order-check-content">' + cart_detail[i].price + '</div>' +
             '<div class="order-check-content">' + cart_detail[i].quantity + '</div>' +
-            '<div class="order-check-content">Thành tiền</div>'
+            '<div class="order-check-content">' + totalEachProduct + '.000Đ' + '</div>'
+            totalPrice += totalEachProduct
     }
-    document.querySelector('.order-check-table').innerHTML = orderCheckContent
+    document.querySelector('.order-check-end').innerHTML = 'Tổng cộng: ' + totalPrice + '.000Đ'
+    document.querySelector('.order-check-table').innerHTML = orderCheckContent   
 }
 
 function hideOrderCheck(){
@@ -213,7 +225,14 @@ function hideOrderCheck(){
     hideOrderCheck.style.display = 'none'
 }
 
+//======================================== DANH SÁCH NGƯỜI DÙNG ==================================================
+if (localStorage.getItem('users') == null) {
+    localStorage.setItem('users',JSON.stringify([]));
+}
 
+function showUsers(){
+
+}
 
 
 

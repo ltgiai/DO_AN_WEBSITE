@@ -6,6 +6,7 @@ let users = [
         email : 'admin123@gmail.com',
         password : '12345678',
         type : 'admin'
+        
     },
     {
         email : 'tuangiai52@gmail.com',
