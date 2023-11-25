@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="../css/admin.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="sliderTab">
+        <div id="leftmenu" class="nav">
+             <div class="logo">
+                <img src="../img/logo_bobaus_real.png" alt="Since1999">
+            </div>
+            <ul class="navTab">
+                <li onclick="show()"><img src="../img/icon_product.jpg"><span class="nav-item active pro" data-target="tab1">Sản phẩm</span></li>
+                <li onclick="showOrderCustomer()"><img src="../img/icon_bill.webp"><span class="nav-item" data-target="tab2">Đơn hàng</span></li>
+                <li><img src="../img/icon_customer.png"><span class="nav-item" data-target="tab3">Tài khoản</span></li>
+                <li><img src="../img/icon_chart.png"><span class="nav-item" data-target="tab4">Thống kê</span></li>
+                <li id="admin-name"><img src="../img/icon_chart.png"><span>TGiai</span></li>
+                <li style="position: absolute; bottom: 2px;"><img src="../img/icon_logout.png"><span onclick="main_redirect()">Đăng xuất</span></li>
+            </ul>
+        </div>
+    
+        <div class="content-tab">
+            <div class="tab" id="tab1">
+                <div class="page-form__title">DANH SÁCH SẢN PHẨM</div>
+                <div class="page-form__content">
+                    <div class="input-box">
+                        <div class="box-element">
+                            <label for="form_id">Mã sản phẩm</label>
+                            <input type="text" id="item-id">
+                        </div>
+                        <div class="box-element">    
+                            <label for="form_type">Loại sản phẩm</label>
+                            <select type="text" id="item-type">
+                                <option class="option-ctn" value="trasua">Trà sữa</option>
+                                <option class="option-ctn" value="tratuoi">Trà tươi</option>
+                                <option class="option-ctn" value="tratraicay">Trà trái cây</option>
+                                <option class="option-ctn" value="kemsua">Kem sữa</option>
+                            </select>
+                        </div>            
+                        <div class="box-element">
+                            <label for="form_name">Tên sản phẩm</label>
+                            <input type="text" id="item-name">
+                        </div>
+                        <div class="box-element">    
+                            <label for="form_price">Đơn giá</label>
+                            <input type="text" id="item-price">
+                        </div>
+                        <div class="box-element">    
+                            <label for="form_img">Hình ảnh</label>
+                            <input type="text" id="item-img">
+                        </div>
+                    </div>
+                    <div class="button-option">
+                        <button id="Add-button" type="submit" onclick="addItem();">Add</button>
+                        <button id="Find-button" type="submit" onclick="findItem();">Find</button>
+                        <button id="View-button" type="submit" onclick="show();">View All</button>
+                        <button id="Update-button" type="submit">Update</button>
+                    </div>
+                    <hr style="margin-bottom: 30px;">
+
+                    <div class="database">
+                        <div class="database-heading" id="render">
+                            <div class="heading-name">ID</div>
+                            <div class="heading-name">Hình ảnh</div>
+                            <div class="heading-name">Tên</div>
+                            <div class="heading-name">Thể loại</div>
+                            <div class="heading-name">Đơn giá</div>
+                            <div class="heading-name">Chức năng</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab" id="tab2">
+                <div class="page-form__title">DANH SÁCH ĐƠN HÀNG</div>
+                <div class="order-database-container">
+                    <div class="order-table" id="render-order">
+                        <div class="order-heading">ID</div>
+                        <div class="order-heading">Tên khách hàng</div>
+                        <div class="order-heading">Đơn hàng</div>
+                        <div class="order-heading">Số điện thoại</div>
+                        <div class="order-heading">Địa chỉ</div>
+                         <div class="order-heading">Tổng tiền</div> 
+                        <div class="order-heading">Tình trạng</div>
+
+                        <div class="order-heading">ID</div>
+                        <div class="order-heading">Tên khách hàng</div>
+                        <div class="order-heading">
+                            <button class="check-order-btn" onclick="showOrderCheck()">Xem đơn hàng</button>
+                        </div>
+                        <div class="order-heading">Số điện thoại</div>
+                        <div class="order-heading">Địa chỉ</div>
+                        <div class="order-heading">Tổng tiền</div> 
+                        <div class="order-heading">
+                            <select type="text" class="check-order-status-optn">
+                                <option value="isDelivered">Đã giao hàng</option>
+                                <option value="isNotDelivered">Đang xử lí</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="order-check-container">
+                        <div class="order-check-title">Danh Sách Đơn Hàng</div>
+                        <div class="order-check-table">
+                            <div class="order-check-content">STT</div>
+                            <div class="order-check-content">Tên sản phẩm</div>
+                            <div class="order-check-content">Đơn giá</div>
+                            <div class="order-check-content">Số lượng</div>
+                            <div class="order-check-content">Thành tiền</div>
+
+                            <div class="order-check-content">STT</div>
+                            <div class="order-check-content">Tên sản phẩm</div>
+                            <div class="order-check-content">Đơn giá</div>
+                            <div class="order-check-content">Số lượng</div>
+                            <div class="order-check-content">Thành tiền</div>
+                            
+                            <div class="order-check-content">STT</div>
+                            <div class="order-check-content">Tên sản phẩm</div>
+                            <div class="order-check-content">Đơn giá</div>
+                            <div class="order-check-content">Số lượng</div>
+                            <div class="order-check-content">Thành tiền</div>
+                        </div>
+                        <div class="order-check-end">Tổng tiền cần thanh toán: </div>
+                        <button class="order-check-close" onclick="hideOrderCheck()">Exit</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab" id="tab3">
+                <div class="page-form__title">DANH SÁCH TÀI KHOẢN</div>
+                <div class="users-database-container">
+                    <div class="users-table">
+                        <div class="users-heading">ID</div>
+                        <div class="users-heading">Tên người dùng</div>
+                        <div class="users-heading">Email</div>
+                        <div class="users-heading">Mật khẩu</div>
+                        <div class="users-heading">Loại người dùng</div>
+
+                        <div class="users-content">ID</div>
+                        <div class="users-content-">Tên người dùng</div>
+                        <div class="users-content">Email</div>
+                        <div class="users-content">Mật khẩu</div>
+                        <div class="users-content">Loại người dùng</div>
+
+                    </div>
+                </div>  
+            </div>
+            
+            <div class="tab" id="tab4">
+                <div class="page-form__title">THỐNG KÊ</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://fontawesome.com/search?s=solid&f=classic&o=r"></script>
+    <script src="../js/admin.js"></script>
+    <script src="../js/products.js"></script>
+    <script src="../js/Cart.js"></script>
+    <script src="../js/users.js"></script>
+</body>
+</html>

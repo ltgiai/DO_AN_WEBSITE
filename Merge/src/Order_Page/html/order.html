@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trang Order</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- <link rel="stylesheet" href="../css/style_order.css">
+  <link rel="stylesheet" href="../css/style_order_common.css">
+  <link rel="stylesheet" href="../css/style_customize.css">
+  <link rel="stylesheet" href="../css/style_checkout.css">
+  <link rel="stylesheet" href="../css/style_orders_list.css"> -->
+  <link rel="stylesheet" href="../css/order.css">
+</head>
+
+
+<body>
+  <section id="order-page">
+
+    <div class="order-header">
+      <a class="logo" href=""><img src="../img/logo/logo_name.png" alt=""></a>
+      <div class="btn-back">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i>
+      </div>
+      <div class="search">
+        <input class="input-search" type="text" placeholder="Tìm kiếm sản phẩm...">
+      </div>
+      <div class="login">
+        <div class="icon-user">
+          <i class="fa-solid fa-circle-user"></i>
+        </div>
+        <div class="orders-user">
+          <label class="login-user-name">Huu Nghia</label>
+          <div class="btn-orders-list">Xem đơn hàng</div>
+        </div>
+        
+      </div>
+    </div>
+
+    <div class="order-page">
+      <div class="order-content">
+        <div class="order-sidebar sidebar-left">
+          <div class="cat-title">DANH MỤC</div>
+          <div class="list-cat">
+            <!-- Cat format
+            <div class="cat-item" catslug="">
+              <div class="cat-name"></div>
+              <div class="cat-amount"></div>
+            </div> 
+          -->
+          </div>
+        </div>
+
+        <div class="order-center">
+          <div class="main-center">
+            <div class="category" catslug="milktea">
+              <div class="category-name">
+                <div class="left">MilkTea</div>
+                <div class="right"><i class="fas fa-angle-down" aria-hidden="true"></i></div>
+              </div>
+              <div class="list-product">
+                <!-- <div class="product" product_id="10">
+                <img src="" alt="">
+                <div class="product-name">Tra Sua Tran Chau Hoang Kim</div>
+                <div class="product-price">
+                  <p class="product-origin-price"> 45,000 đ</p>
+                </div>
+                <div class="btn-increase">+</div>
+              </div> -->
+              </div>
+            </div>
+            <div class="category" catslug="tea">
+              <div class="category-name">
+                <div class="left">Tea</div>
+                <div class="right"><i class="fas fa-angle-down" aria-hidden="true"></i></div>
+              </div>
+              <div class="list-product">
+                <!-- <div class="product" product_id="10">
+                <img src="" alt="">
+                <div class="product-name">Tra Sua Tran Chau Hoang Kim</div>
+                <div class="product-price">
+                  <p class="product-origin-price"> 45,000 đ</p>
+                </div>
+                <div class="btn-increase">+</div>
+              </div> -->
+              </div>
+            </div>
+            <div class="category" catslug="fruittea">
+              <div class="category-name">
+                <div class="left">FruitTea</div>
+                <div class="right"><i class="fas fa-angle-down" aria-hidden="true"></i></div>
+              </div>
+              <div class="list-product">
+                <!-- <div class="product" product_id="10">
+                <img src="" alt="">
+                <div class="product-name">Tra Sua Tran Chau Hoang Kim</div>
+                <div class="product-price">
+                  <p class="product-origin-price"> 45,000 đ</p>
+                </div>
+                <div class="btn-increase">+</div>
+              </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="order-sidebar sidebar-right">
+          <div class="cart-group-top">
+            <div class="cart-title">
+              <div class="arrow-down">
+                <i class="fas fa-arrow-down" aria-hidden="true"></i>
+              </div>
+              <div class="cart-title-left">Giỏ Hàng</div>
+              <span class="cart-title-right" id="clear-cart">Xóa Tất Cả</span>
+            </div>
+            <div class="cart-ss1">
+            </div>
+          </div>
+          <div class="cart-group-bottom">
+            <div class="cart-ss2">
+            </div>
+            <div class="cart-ss3">
+              <div class="btn-checkout">Đặt hàng</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="btn-menu">
+          <i class="fas fa-times" aria-hidden="true"></i>
+        </div>
+
+        <div class="btn-cart">
+        </div>
+
+      </div>
+    </div>
+    <div class="wrap-popup" scroll="no">
+      <div class="overlay"></div>
+      
+    </div>
+  </section>
+
+  <section id="checkout">
+    <div class="checkout-header">
+      <div class="logo"><img src="/img/logo/logo_name.png" alt=""></div>
+      <!-- <div class="breakcrumb">
+        <span class="side-item">
+          ORDER PAGE
+        </span>
+        <i class="fa-solid fa-caret-right"></i>
+        <span class="side-item">
+          CHECKOUT PAGE
+        </span>
+      </div> -->
+    </div>
+
+    <form class="checkout-content">
+      <div class="checkout-info">
+        <div class="personal-details">
+          <div class="checkout-title">Personal Infomation</div>
+          <div class="personal-info">
+            <div class="personal-info-item email">
+              <label>Email:</label>
+              <div></div>
+            </div>
+            <div class="personal-info-item name">
+              <label>Name:</label>
+              <div></div>
+            </div>
+          </div>
+        </div>
+        <div class="shipping-details">
+          <div class="checkout-title">Shipping Infomation</div>
+          <div class="shipping-info">
+            <div class="input-wrap">
+              <input type="text" class="input-field" id="phone" autocomplete="off" required/>
+              <label>Phone</label>
+              <small></small>
+            </div>
+            <div class="address-info">
+              <div class="address-info-top">
+                <div class="input-wrap">
+                  <input type="text" class="input-field" id="address-street" autocomplete="off" required/>
+                  <label>Home Number, Street</label>
+                  <small></small>
+                </div>
+                <div class="input-wrap" id="city">
+                    <input type="text" class="input-field" id="address-city" autocomplete="off" required/>
+                    <label>City</label>
+                    <small></small>
+                </div>
+              </div>
+              <div class="address-info-bottom">
+                <div class="input-wrap" id="district">
+                  <input type="text" class="input-field" id="address-district" autocomplete="off" required/>
+                  <label>District</label>
+                  <small></small>
+                </div>
+                <div class="input-wrap" id="ward">
+                  <input type="text" class="input-field" id="address-ward" autocomplete="off" required/>
+                  <label>Ward</label>
+                  <small></small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="payment">
+          <div class="checkout-title">Payment Method</div>
+          <div class="payment-method">
+            <div class="payment-item" method="momo">
+              <i class="fa-solid fa-credit-card"></i>
+              <label>Momo</label>
+            </div>
+            <div class="payment-item active" method="cash">
+              <i class="fa-solid fa-money-bill-wave"></i>
+              <label>Cash</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="checkout-order">
+        <div class="checkout-title">
+          Your Order
+        </div>
+        <div class="order-details">
+
+          
+        </div>
+        <div class="checkout-total">
+          <div class="checkout-total-item" payfor="shopping">
+            <label>Tổng sản phẩm</label>
+            <div></div>
+          </div>
+          <div class="checkout-total-item" payfor="shipping">
+            <label>Phí vận chuyển</label>
+            <div></div>
+          </div>
+          <div class="checkout-total-item final-total" payfor="final-total">
+            <label>Tổng thanh toán</label>
+            <div></div>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn-buy">
+        ĐẶT HÀNG
+      </button>
+      <div class="thanks">
+        <p class="thank-to">
+        </p>
+        <p class="thank-on-date">
+        </p>
+      </div>
+    </form>
+    
+  </section>
+
+  <section id="orders-list">
+    <div class="order-header">
+      <a class="logo" href=""><img src="/img/logo/logo_name.png" alt=""></a>
+      <div class="btn-back">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i>
+      </div>
+      <div class="login">
+        <div class="icon-user">
+          <i class="fa-solid fa-circle-user"></i>
+        </div>
+        <div class="orders-user">
+          <label class="login-user-name">Huu Nghia</label>
+          <div class="btn-order-page">Mua Hàng</div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="orders-list-content">
+      <div class="orders-list-header">
+        <h1>Orders List</h1>
+      </div>
+      <div class="orders-list-area-wrap tableView">
+        <div class="orders-header">
+          <div class="order-cell order-id">ID</div>
+          <div class="order-cell order-time">Time</div>
+          <div class="order-cell status-cell">Status</div>
+          <div class="order-cell order-quantity">Quantity</div>
+          <div class="order-cell order-total">Total</div>
+          <div class="order-cell order-checkUser">Check</div>
+        </div>
+        <div class="orders-list-area-content">
+
+        </div>
+        
+  
+      </div>
+    </div>
+    <div class="wrap-popup" scroll="no">
+      <div class="overlay"></div>
+    <div class="popup popup-order-detail" >
+      <div class="popup-title">
+          <div class="order-detail-id">Order #02222</div>
+          <div class="order-detail-time">12-12-2023</div>
+      </div>
+      <div class="close-btn"><i class="fas fa-times" aria-hidden="true"></i></div>
+      <div class="popup-content">
+        <div class="order-detail-content" order-id="">
+          <div class="content-info">
+              <div class="personal-details">
+                  <div class="detail-title">Personal Infomation</div>
+                  <div class="detail-personal-info">
+                      <div class="personal-info-item email">
+                          <label>Email:</label>
+                          <h4>duong2209@gmail.com</h4>
+                      </div>
+                      <div class="personal-info-item name">
+                          <label>Name:</label>
+                          <h4>Hai Dun</h4>
+                      </div>
+                  </div>
+              </div>
+              <div class="shipping-details">
+                  <div class="detail-title">Shipping Infomation</div>
+                  <div class="detail-shipping-info">
+                      <div class="shipping-info-item phone">
+                          <label>Phone:</label>
+                          <h4>0868707528</h4>
+                      </div>
+                      <div class="shipping-info-item address">
+                          <label>Address:</label>
+                          <h4>125/227/9K Nguyen Thi Tan, P1, Q8, TPHCM</h4>
+                      </div>
+                  </div>
+                  </div>
+          </div>
+          <div class="content-order">
+              <div class="detail-title">Your Order</div>
+              <div class="order-details">
+                  
+              </div>
+              <div class="detail-total">
+                  <div class="detail-total-item" payfor="shopping">
+                      <label>Tổng sản phẩm</label>
+                      <div>110,000đ</div>
+                  </div>
+                  <div class="detail-total-item" payfor="shipping">
+                      <label>Phí vận chuyển</label>
+                      <div>10,000đ</div>
+                  </div>
+                  <div class="detail-total-item final-total" payfor="final-total">
+                      <label>Tổng thanh toán</label>
+                      <div>120,000đ</div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      </div>
+  
+      </div>
+    </div>
+  </section>
+
+  <script src="../js/src.js"></script>
+  <script src="../js/order.js"></script>
+</body>
+
+</html>
