@@ -1,0 +1,387 @@
+.change-quantity {
+    color: #ffffff;
+    background: #799dd9;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 0;
+    line-height: 20px;
+    font-size: 26px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .btn-increase {
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border-radius: 50%;
+    background: #799dd9;
+    color: #ffffff;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 26px;
+    font-weight: 600;
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+  }
+  
+  
+  .popup-choose-product {
+    z-index: 2;
+    border-radius: 8px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .popup-choose-product .ss-1 {
+    display: flex;
+    padding: 0 20px;
+    padding-bottom: 12px;
+  }
+  
+  .ss-1-left img {
+    width: 180px;
+    height: 180px;
+    border-radius: 8px;
+    border: 1px solid #f4f4f4;
+  }
+  
+  .overlay {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(2px);
+    display: none;
+  }
+  
+  .ss-1-right {
+    margin-left: 16px;
+  }
+  
+  .ss-1-right .product-name {
+    font-size: 18px;
+    margin-right: 16px;
+    font-weight: 600;
+  }
+  
+  .ss-1-right .wrap-quantity {
+    width: 22rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .ss-1-right .change-quantity-wrap {
+    display: flex;  
+  }
+  
+  .ss-1-right .change-quantity-wrap .amount {
+    padding: 0 15px;
+  }
+  
+  .ss-1-right .price {
+    padding-right: 10px;
+    color: #8a733f;
+    font-weight: 600;
+  }
+  
+  .ss-1-right .regular-price {
+    font-size: 12px;
+    text-decoration: line-through;
+  }
+  
+  .ss-1-right .product-info {
+    padding: 10px 0;
+    color: rgba(0, 0, 0, 0.87);
+    font-style: italic;
+  }
+  
+  .ss-1-right .product-price {
+    margin-top: 16px;
+  }
+  
+  .ss-1-right .btn-price-product {
+    background: #d8b979;
+    color: #ffffff;
+    padding: 0 20px;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 30px;
+    border: none;
+    box-shadow: unset;
+    margin-left: 30px;
+    cursor: pointer;
+  }
+  
+  .customize-content {
+    display: flex;
+    padding: 0 20px;
+    background: #ffffff;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0 0 12px 0 rgba(0,0,0,.05);
+    border-radius: 4px;
+  }
+  
+  .customize-title {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-bottom: 8px;
+  }
+  
+  .customize-title .left {
+    font-weight: 600;
+    font-size: 16px;
+  }
+  
+  .customize-content .container-radio {
+    width: fit-content;
+  }
+  
+  .customize-section {
+    margin-bottom: 8px;
+  }
+  
+  .ss-2 {
+    /* max-height: 260px; */
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    padding: 20px;
+    flex-grow: 1;
+    height: 50%;
+    margin-bottom: 20px;
+  }
+  
+  .have-price-wrap {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .no-price-wrap {
+    width: 50%;
+  }
+  
+  span.cus-price {
+    white-space: nowrap;
+  }
+  
+  
+  .order-content .cat-item {
+    cursor: pointer;
+  }
+  
+  .popup.popup-add-product {
+    width: 650px;
+    height: 500px;
+    top: calc(50% - 250px);
+    left: calc(50% - 325px);
+    background: #fbfbfb;
+    border-radius: 10px;
+    padding-top: 10px;
+  
+  }
+  
+  .order-header .btn-back{
+    padding: 8px;
+    margin-right: 12px;
+    display: none;
+  }
+  
+  .overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: rgba(128, 128, 128, 0.5);
+  }
+  
+  .popup {
+    z-index: 5;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.06);
+    border-radius: 3px;
+    background: #ffffff;
+    position: fixed;
+    padding: 40px 0px 10px 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .popup-title {
+    position: absolute;
+    top: 8px;
+    font-size: 20px;
+  }
+  
+  .popup-content {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .order-header .user-img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+  
+  .order-header .user-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .order-header .user-info1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 2%;
+    right: 3%;
+    cursor: pointer;
+  }
+  
+  .close-btn i {
+    font-size: 24px;
+  }
+  
+  .close-btn:hover i {
+    transform: scale(1.2, 1.2);
+  }
+  
+  
+  /* width */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  
+  /************************************** radio *************************************************/
+  /* The container */
+  label.container-radio {
+    margin: 0 !important;
+  }
+  
+  .container-radio {
+    display: block;
+    position: relative;
+    padding-left: 24px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default radio button */
+  .container-radio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  /* Create a custom radio button */
+  .checkmark-radio {
+    position: absolute;
+    top: calc(50% - 8px);
+    left: 0;
+    height: 16px;
+    width: 16px;
+    background-color: #eee;
+    border-radius: 50%;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .container-radio:hover input ~ .checkmark-radio {
+    background-color: #ccc;
+  }
+  
+  /* When the radio button is checked, add a blue background */
+  .container-radio input:checked ~ .checkmark-radio {
+    background-color: #d8b979;
+  }
+  
+  
+  /************************************** checkbox *************************************************/
+  
+  
+  /* The container */
+  label.container-checkbox {
+    display: block;
+    position: relative;
+    padding-left: 24px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-bottom: 0px;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .container-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: calc(50% - 8px);
+    left: 0;
+    height: 16px;
+    width: 16px;
+    border-radius: 3px;
+    background-color: #eee;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .container-checkbox:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .container-checkbox input:checked ~ .checkmark {
+    background-color: #d8b979;
+  }
+  
+  
